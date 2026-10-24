@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#180d10" />
+  <title>Velvet Vine | Wine Collection</title>
+  <meta name="description" content="Explore the Velvet Vine wine collection and discover wines for your collection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="announcement">
+    A thoughtfully curated collection of wines
+  </div>
+
+  <header class="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-mark">V</span>
+      <span>VELVET <b>VINE</b></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#story">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" id="openCart" aria-label="Open shopping cart">
+      Bag <span id="cartCount">0</span>
+    </button>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">THE ART OF FINE WINE</p>
+        <h1>Every bottle<br />has a <em>story.</em></h1>
+        <p class="hero-description">
+          Explore a considered collection of red, white and rosé wines,
+          selected for their character, craft and origin.
+        </p>
+        <div class="hero-actions">
+          <a href="#collection" class="button button-primary">
+            Explore Collection <span>↗</span>
+          </a>
+          <a href="#story" class="text-link">Discover our story</a>
+        </div>
+        <div class="hero-note">
+          <span class="note-line"></span>
+          A WORLD OF FLAVOUR, IN EVERY POUR
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=85"
+          alt="Wine glasses and a bottle in a warm, elegant setting"
+        />
+        <div class="image-caption">
+          <span>THE COLLECTION</span>
+          <span>01 — 06</span>
+        </div>
+      </div>
+
+      <div class="hero-watermark">VV</div>
+    </section>
+
+    <section class="benefits">
+      <div><span>✳</span> Curated Selections</div>
+      <div><span>◇</span> Discover New Regions</div>
+      <div><span>✧</span> Quality & Craftsmanship</div>
+    </section>
+
+    <section class="collection section-padding" id="collection">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FIND YOUR FAVOURITE</p>
+          <h2>Explore the <em>collection.</em></h2>
+        </div>
+        <p class="section-description">
+          From bold reds to refreshing whites, discover a bottle that
+          suits your taste.
+        </p>
+      </div>
+
+      <div class="collection-controls">
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="All">All Wines</button>
+          <button class="filter" data-category="Red">Red</button>
+          <button class="filter" data-category="White">White</button>
+          <button class="filter" data-category="Rosé">Rosé</button>
+          <button class="filter" data-category="Sparkling">Sparkling</button>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search wines..." aria-label="Search wines" />
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>
+        No wines found. Try another search.
+      </p>
+    </section>
+
+    <section class="story section-padding" id="story">
+      <div class="story-image">
+        <img
+          src="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format&fit=crop&w=1000&q=85"
+          alt="Wine bottles displayed in a wine cellar"
+          loading="lazy"
+        />
+      </div>
+      <div class="story-content">
+        <p class="eyebrow">OUR PHILOSOPHY</p>
+        <h2>Good taste.<br /><em>Thoughtfully chosen.</em></h2>
+        <p>
+          At Velvet Vine, we believe every wine has its own character.
+          Our collection celebrates different regions, styles and
+          traditions, bringing the world of wine a little closer to you.
+        </p>
+        <a href="#collection" class="text-link">Browse the collection ↗</a>
+      </div>
+    </section>
+
+    <section class="newsletter" id="contact">
+      <p class="eyebrow">STAY IN THE KNOW</p>
+      <h2>A little more <em>to discover.</em></h2>
+      <p>Get updates about new arrivals and our latest collection.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <input type="email" id="emailInput" placeholder="Your email address" aria-label="Your email address" required />
+        <button type="submit" class="button button-primary">Join Us ↗</button>
+      </form>
+      <p id="newsletterMessage" class="newsletter-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">
+      <span class="logo-mark">V</span>
+      <span>VELVET <b>VINE</b></span>
+    </a>
+    <p>Discover responsibly. Enjoy in moderation.</p>
+    <p class="copyright">© <span id="year"></span> Velvet Vine. Demo storefront.</p>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <button class="overlay-backdrop" id="closeCartBackdrop" aria-label="Close cart"></button>
+    <aside class="cart-panel" aria-label="Shopping bag">
+      <div class="cart-header">
+        <h2>Your Bag <span id="cartHeadingCount">(0)</span></h2>
+        <button id="closeCart" class="icon-button" aria-label="Close cart">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total"><span>Estimated total</span><strong id="cartTotal">₹0</strong></div>
+        <p class="cart-disclaimer">
+          Demonstration only. No orders or payments are processed.
+        </p>
+        <button id="demoCheckout" class="button button-primary checkout-button">
+          View Demo Notice
+        </button>
+        <p id="checkoutMessage" class="checkout-message" aria-live="polite"></p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="age-overlay" id="ageOverlay" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+    <div class="age-card">
+      <span class="age-monogram">V</span>
+      <p class="eyebrow">WELCOME TO VELVET VINE</p>
+      <h2 id="ageTitle">A world of wine<br /><em>awaits.</em></h2>
+      <p>Please confirm that you meet the legal drinking age applicable in your location.</p>
+      <button id="ageConfirm" class="button button-primary age-button">
+        I meet the legal age requirement
+      </button>
+      <button id="ageExit" class="text-link age-exit">I do not meet the requirement</button>
+      <p class="age-footnote">Please enjoy responsibly. Alcohol laws vary by location.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
